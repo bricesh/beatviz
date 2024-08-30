@@ -5,16 +5,17 @@ Generated from the following Copilot prompts:
 1. "the modal should close when the escape key is pressed and the array should be looped through indefinitely"
 
 
-```js
 Maladie d'Amour:
+```js
+
 const beatsArray = [
   ['blue', 2],
   ['red', 2],
-	['blue', 2],
+  ['blue', 2],
   ['red', 2],
-	['blue', 2],
+  ['blue', 2],
   ['red', 2],
   ['black', 2],
-	['red', 2]
+  ['red', 2]
 ];
 ```
