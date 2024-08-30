@@ -5,7 +5,7 @@ Generated from the following Copilot prompts:
 1. "the modal should close when the escape key is pressed and the array should be looped through indefinitely"
 
 
-´´´
+```js
 Maladie d'Amour:
 const beatsArray = [
   ['blue', 2],
@@ -17,4 +17,4 @@ const beatsArray = [
   ['black', 2],
 	['red', 2]
 ];
-´´´
+```
