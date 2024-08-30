@@ -3,3 +3,16 @@ Generated from the following Copilot prompts:
 1. "regenerate without using setTimeout"
 1. "when the start button is pressed, a modal should show the coloured circle"
 1. "the modal should close when the escape key is pressed and the array should be looped through indefinitely"
+
+
+Maladie d'aMour:
+const beatsArray = [
+  ['blue', 2],
+  ['red', 2],
+	['blue', 2],
+  ['red', 2],
+	['blue', 2],
+  ['red', 2],
+  ['black', 2],
+	['red', 2]
+];
