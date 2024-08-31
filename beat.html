@@ -29,33 +29,86 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
+			justify-content: center;
+            align-items: center;
+			text-align:center;
         }
-		#countdown {
+		
+		.modal_text {
             font-size: 48px;
             color: grey;
             margin-bottom: 20px;
+			justify-content: center;
+            align-items: center;
+			text-align:center;
         }
     </style>
 </head>
 <body>
-    <h1>Beat Visualizer</h1>
+    <h1>Virtual Conductor</h1>
     <input type="number" id="bpmInput" placeholder="Enter BPM" value="60">
     <button onclick="startVisualization()">Start</button>
     <div id="modal">
-		<div id="countdown"></div>
-        <div id="circle"></div>
+		<table>
+			<col width="100px" />
+			<col width="80px" />
+			<col width="100px" />
+			<tr>
+				<td></td>
+				<td><div id="countdown" class="modal_text"></div></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><div id="chords" class="modal_text"></div></td>
+				<td></td>
+				<td><div id="beat" class="modal_text"></div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan=3><div id="circle"></div></td>
+				<td></td>
+			</tr>
+		</table>
     </div>
 
     <script>
         const beatsArray = [
-            ['blue', 2],
-            ['red', 2],
-			['blue', 2],
-            ['red', 2],
-			['blue', 2],
-            ['red', 2],
-            ['black', 2],
-			['red', 2],
+            ['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'E7'],
+			['red', 2, 'A'],
+			
+			['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'A'],
+			['red', 2, 'G'],
+			['blue', 2, 'D'],
+			
+			['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'E7'],
+			['red', 2, 'A'],
+			
+			['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'E7'],
+			['red', 2, 'A'],
         ];
 
         function startVisualization() {
@@ -68,11 +121,15 @@
             const modal = document.getElementById('modal');
 			const countdown = document.getElementById('countdown');
 			const circle = document.getElementById('circle');
+			const chords = document.getElementById('chords');
+			const beat = document.getElementById('beat');
+			
             modal.style.display = 'flex';
 
             let index = 0;
             let startTime = null;
 			let countdownval = 4;
+			let beatscountdown = -1;
 
             function showCircle(timestamp) {
                 if (!startTime) startTime = timestamp;
@@ -95,10 +152,25 @@
 						index = 0;
 					}
 
-					const [color, beats] = beatsArray[index];
+					const [color, beats, chord] = beatsArray[index];
 					const duration = (beats * 60) / bpm;
 					
+					//if (beatscountdown > 0 ) {
+					//	if (elapsed < (60 / bpm)) {
+					beat.textContent = beats;
+					//	} else {
+					//		beatscountdown--;
+					//		beat.textContent = null;
+					//	}
+					//	
+					//} else {
+					//	beatscountdown = beats;
+					//}
+					
+					
 					if (elapsed < duration) {
+						chords.textContent = chord;
+						beat.textContent = beats;
 						circle.style.backgroundColor = color;
 						anim = requestAnimationFrame(showCircle);
 					} else {
@@ -115,7 +187,10 @@
                 if (event.key === 'Escape') {
                     modal.style.display = 'none';
 					circle.style.backgroundColor = null;
+					chords.textContent = null;
+					beat.textContent = null;
 					cancelAnimationFrame(anim);
+					beatscountdown = -1;
                 }
             });
         }
