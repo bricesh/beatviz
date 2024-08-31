@@ -8,14 +8,42 @@ Generated from the following Copilot prompts:
 Maladie d'Amour:
 ```js
 
-const beatsArray = [
-  ['blue', 2],
-  ['red', 2],
-  ['blue', 2],
-  ['red', 2],
-  ['blue', 2],
-  ['red', 2],
-  ['black', 2],
-  ['red', 2]
-];
+        const beatsArray = [
+            ['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'E7'],
+			['red', 2, 'A'],
+			
+			['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'A'],
+			['red', 2, 'G'],
+			['blue', 2, 'D'],
+			
+			['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'E7'],
+			['red', 2, 'A'],
+			
+			['blue', 2, 'D'],
+            ['red', 2, 'A'],
+			['blue', 2, 'Bm'],
+            ['red', 2, 'F#m'],
+			['blue', 2, 'G'],
+            ['red', 2, 'D'],
+            ['black', 2, 'E7'],
+			['red', 2, 'A'],
+        ];
 ```
